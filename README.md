@@ -1,24 +1,15 @@
-# README
+# Expense Tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Track your daily expenses
 
-Things you may want to cover:
+Features:
 
-* Ruby version
+* Categories
 
-* System dependencies
+* Products
 
-* Configuration
+* Expenses
 
-* Database creation
+* Budget
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Depositors
