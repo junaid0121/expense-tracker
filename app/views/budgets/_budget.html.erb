@@ -1,0 +1,27 @@
+<div id="<%= dom_id budget %>">
+  <div class="my-2">
+    <p>Budget for <span class="text-xl font-bold"><%= budget.category.name %></span> for <span class="text-xl font-bold"><%= Date::MONTHNAMES[budget.month] %></span>.</p>
+  </div>
+  <div class="flex justify-between items-end">
+    <div class="p-2 rounded-lg bg-blue-200">
+      <span class="font-medium">Budget:</span>
+      <span class="text-2xl">₹<%= budget.depositors.sum(:amount) %></span>
+    </div>
+
+    <div class="p-2 rounded-lg bg-green-200">
+      <span class="font-medium">Remaining:</span>
+      <span class="text-2xl">₹<%= get_remaining_budget(budget) %></span>
+    </div>
+
+    <div class="p-2 rounded-lg bg-red-200">
+      <span class="font-medium">Utilized:</span>
+      <span class="text-2xl">₹<%= get_utilized_budget(budget) %></span>
+    </div>
+  </div>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this budget", budget, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this budget', edit_budget_path(budget), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
