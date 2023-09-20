@@ -25,7 +25,7 @@ class ExpensesController < ApplicationController
 
     respond_to do |format|
       if @expense.save
-        format.html { redirect_to new_expense_path, notice: "Expense was successfully created." }
+        format.html { redirect_to new_expense_path(date: @expense.bought_at.strftime("%Y-%m-%d")), notice: "Expense was successfully created." }
         format.json { render :show, status: :created, location: @expense }
       else
         format.html { render :new, status: :unprocessable_entity }
